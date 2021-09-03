@@ -78,10 +78,10 @@ public class LandingPage extends AppCompatActivity {
             }
         });
     }
-//
-//    public static Intent getIntent(Context context, String toastValue){
-//        Intent intent = new Intent(context, LandingPage.class);
-//        intent.putExtra(LandingPage.ACTIVITY_LABEL, toastValue);
-//        return intent;
-//    }
+
+    // Factory method to get an Intent and switch to Landing Page
+    public static Intent nextActivity(Context context){
+        Intent intent = new Intent(context, LandingPage.class);
+        return intent;
+    }
 }

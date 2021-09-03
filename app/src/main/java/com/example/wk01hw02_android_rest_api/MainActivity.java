@@ -2,6 +2,7 @@ package com.example.wk01hw02_android_rest_api;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.View;
@@ -80,11 +81,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     }
 
-//    // Factory method to get an Intent and switch to Landing Page
-//    public void nextActivity(View view){
-//        Intent intent = LandingPage.getIntent(getApplicationContext(), "Hello" );
-//        startActivity(intent);
-//    }
+
 
 
     public void onClick(View v){
@@ -110,12 +107,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
                 if (inputUsername.equals(user.getUsername())) {
                     usernameError = false;
                     if(inputPassword.equals(user.getPassword())) {
-                        Intent i = new Intent(this, LandingPage.class);
+                        Intent i = LandingPage.nextActivity(MainActivity.this);
                         Bundle userIdUsername = new Bundle();
                         userIdUsername.putInt("userId", user.getUserId());
                         userIdUsername.putString("username", user.getUsername());
                         i.putExtras(userIdUsername);
                         startActivity(i);
+
                     }
                     else{
                        //Error if password wrong
