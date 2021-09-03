@@ -1,5 +1,8 @@
 package com.example.wk01hw02_android_rest_api;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private int id;
     private String username;

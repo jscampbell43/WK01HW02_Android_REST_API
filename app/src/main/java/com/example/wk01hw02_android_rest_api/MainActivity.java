@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     private EditText uEditText;
     private EditText pEditText;
 
-    List<User> users;
+    Users users = new Users();
+    List<User> listUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +69,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             }
         });
         */
-        users = new ArrayList<User>();
-        User user1 = new User(1, "Bob", "secret1");
-        User user2 = new User(2, "Joe", "secret2");
-        User user3 = new User(3, "Jen", "secret3");
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
+        listUsers = users.getUsers();
 
         View loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
@@ -103,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             inputUsername = cinput.getText().toString();
             cinput = findViewById(R.id.cinput_password);
             inputPassword = cinput.getText().toString();
-            for (User user : users) {
+            for (User user : listUsers) {
                 if (inputUsername.equals(user.getUsername())) {
                     usernameError = false;
                     if(inputPassword.equals(user.getPassword())) {
