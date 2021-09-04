@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Users {
-    public List<User> getUsers(){
+
+    public static List<User> getUsers(){
         List<User> users = new ArrayList<User>();
         User user1 = new User(1, "Bob", "secret1");
         User user2 = new User(2, "Joe", "secret2");
