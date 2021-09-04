@@ -34,50 +34,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*
-        textViewResult = findViewById(R.id.text_view_result1);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-
-        Call<List<User>> call = jsonPlaceHolderApi.getUsers();
-
-        call.enqueue(new Callback<List<User>>(){
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response){
-                if(!response.isSuccessful()){
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-                List<User> users = response.body();
-                for(User user : users){
-                    String content = "";
-                    content += "User ID: " + user.getUserId() + "\n";
-                    content += "Username: " + user.getUsername() + "\n";
-
-                    textViewResult.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t){
-                textViewResult.setText(t.getMessage());
-            }
-        });
-        */
         listUsers = users.getUsers();
 
         View loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
-
     }
-
-
-
 
     public void onClick(View v){
         if(v.getId() == R.id.login_button){

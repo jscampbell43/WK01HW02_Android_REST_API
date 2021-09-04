@@ -27,8 +27,6 @@ public class LandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
 
-        //String toastValue = getIntent().getStringExtra(ACTIVITY_LABEL);
-
         Bundle userIdUsername = getIntent().getExtras();
 
         if(userIdUsername != null){
